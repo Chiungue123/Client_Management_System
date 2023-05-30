@@ -11,21 +11,24 @@
     <div class="background" role="presentation">
       <div class="content" role="main">
         <div class="left">
-          <img src="Image/logo.png" alt="logo">
+          <img class="logo" src="/assets/Image/logo.png" alt="logo">
           <h1>Welcome To Henna Solutions</h1>
-          <div class="signup">
-            <p>Don't have an account?<a href="Login">Sign Up.</a></p>
-            <button type="button">Sign Up</button>
-          </div>
         </div>
         <div class="right">
-          <form class = "login">
-            <h2>Login</h2>
-            <p><input type="text" placeholder="Email"></p>
-            <p><input type="password" placeholder="Password"></p>
-            <button type="button" click="authenticate">Login</button>
+          <form>
+            <h2 class="form-title">Login</h2>
+            <div class="form-content">
+              <p><input type="text" class="input" placeholder="Email"></p>
+              <p><input type="password" class="input" placeholder="Password"></p>
+              <div class = "links">
+                <p class="link">Don't have an account?<a href="Login">Sign Up.</a></p>
+                <p class="link"><a href="forgotPassword">Forgot Password?</a></p>
+              </div>
+              <button type="submit" class="button">Login</button>
+            </div>
           </form>
         </div>
+
       </div>
     </div>
   </body>
