@@ -1,0 +1,69 @@
+body, html{
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.background{
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-image: url("Image/MainBackground.jpeg");
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+}
+
+.background .content{
+    position: relative;
+    border-radius: 15px;
+    width: 75%;
+    height: 75%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* This will center the container */
+    background-color: aliceblue;
+    font-family: Arial;
+}
+
+.background .left{
+    color: white;
+    flex: 1;
+    float: left;
+    width: 30%;
+    height: 100%;
+    border-right: 2px;
+    border-color: black; 
+    background-color: rgb(89, 89, 225);
+    border-radius: 15px 0px 0px 15px;
+}
+
+.background .right{
+    flex: 2;
+    float: right;
+    width: 70%;
+    height: 100%;
+}
+
+.background .left h1{
+    margin: 30px; 
+    top: 10%;
+}
+
+.background .content .left .signup{
+    position: absolute;
+    bottom: 10px;
+    height: 20%;
+    left: 5%;
+    text-align: center;
+}
+
+.background .content .right .login{
+    position: absolute;
+    top: 25%;
+    height: 40%;
+    left: 45%;
+}
