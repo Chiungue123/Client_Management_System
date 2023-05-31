@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./forgot-password.component.css']
 })
 export class ForgotPasswordComponent {
-
+  ngOnInit() {
+    console.log("Forgot Password");
+  }
 }
