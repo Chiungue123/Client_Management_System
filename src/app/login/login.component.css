@@ -1,0 +1,141 @@
+body, html{
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.background{
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-image: url("/assets/Image/MainBackground.jpeg");
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+}
+
+.background .content {
+    position: relative;
+    border-radius: 15px;
+    width: 75%;
+    height: 75%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* This will center the container */
+    background-color: aliceblue;
+    font-family: Arial;
+}
+
+.background .left {
+    color: white; 
+    flex: 1; 
+    float: left;
+    width: 30%;
+    height: 100%;
+    background-color: rgb(89, 89, 225);
+    border-radius: 15px 0px 0px 15px;
+}
+
+.background .right {
+    flex: 2;
+    float: right;
+    width: 70%;
+    height: 100%;
+}
+
+.hey {
+    padding-left: 70px;
+}
+
+.background .content .left h2 {
+    padding-left: 70px;
+    padding-right: 70px;
+    padding-top: 0; 
+}
+
+.background .content .left .signup {
+    bottom: 10px;
+    height: 20%;
+    left: 5%;
+    text-align: center;
+}
+
+.background .content .right {
+    top: 25%;
+    height: 40%;
+    left: 50%;
+    display: flex;
+}
+
+.input {
+    width: 500px;
+    height: 40px;
+    border-radius: 20px;
+    font-size: 15px;
+}
+
+.links{
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    box-sizing: border-box;
+    align-items: center;
+}
+
+.link{
+    margin: 0;
+    font-size: 13px;
+}
+
+form {
+    display: flex;
+    flex-direction: column; /* Make the form appear in a single column */
+    align-items: center;
+    width: 75%;
+    padding-left: 15%;
+    padding-top: 15%;
+}
+
+.form-content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.form-title{
+    align-self: flex-start;
+    margin: 0;
+    padding-left: 2%;
+    font-size: 30px;
+}
+
+.button{
+    width: 125px;
+    height: 40px;
+    border-radius: 20px;
+    background-color: rgb(108, 108, 232);
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    border: none;
+    padding: 10px;
+    margin-top: 20px;
+    align-self: center;
+}
+
+.button:hover{
+    background-color: rgb(89, 89, 225);
+    cursor: pointer;
+}
+
+.logo {
+    width: 300px;
+    height: 300px;
+    margin: 0;
+    padding: 0;
+    margin-left: 5%;
+    margin-top: 5%;
+}
