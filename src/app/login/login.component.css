@@ -46,13 +46,9 @@ body, html{
     height: 100%;
 }
 
-.hey {
-    padding-left: 70px;
-}
-
 .background .content .left h2 {
-    padding-left: 70px;
-    padding-right: 70px;
+    padding-left: 15%;
+    padding-right: 15%;
     padding-top: 0; 
 }
 
@@ -71,10 +67,11 @@ body, html{
 }
 
 .input {
-    width: 500px;
+    width: 90%;
     height: 40px;
     border-radius: 20px;
     font-size: 15px;
+    align-self: flex-start;
 }
 
 .links{
@@ -132,10 +129,9 @@ form {
 }
 
 .logo {
-    width: 300px;
-    height: 300px;
-    margin: 0;
-    padding: 0;
-    margin-left: 5%;
+    width: 100%;
+    height: 50%;
+    align-self: flex-start;
+    margin-right: 15%;
     margin-top: 5%;
 }
