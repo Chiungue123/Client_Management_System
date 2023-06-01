@@ -5,13 +5,18 @@ import { ClientMeetingManagementComponent } from './client-meeting-management/cl
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { LoginComponent } from './login/login.component';
+import { AdminComponent } from './admin/admin.component';
+import { ClientComponent } from './client/client.component';
 
 const routes: Routes = [
   { path: '', component: LoginComponent},
   { path: 'client-management', component: ClientManagementComponent },
   { path: 'client-meeting-management', component: ClientMeetingManagementComponent },
   { path: 'sign-up', component: SignUpComponent },
-  { path: 'forgot-password', component: ForgotPasswordComponent }
+  { path: 'forgot-password', component: ForgotPasswordComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'admin', component: AdminComponent },
+  { path: 'client', component: ClientComponent }
 ];
 
 @NgModule({
@@ -19,4 +24,12 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-export const routingComponents = [ClientManagementComponent, ClientMeetingManagementComponent, SignUpComponent, ForgotPasswordComponent]
+export const routingComponents = [
+   ClientManagementComponent,
+   ClientMeetingManagementComponent, 
+   SignUpComponent, 
+   ForgotPasswordComponent, 
+   AdminComponent, 
+   LoginComponent, 
+   ClientComponent,
+  ]

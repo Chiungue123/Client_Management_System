@@ -19,18 +19,16 @@
         </div>
 
         <div class="right">
-          <form>
+          <form (submit)="login()">
             <h2 class="form-title">Login</h2>
             <div class="form-content">
-              <p><input type="text" class="input" placeholder="Email" required></p>
-              <p><input type="password" class="input" placeholder="Password" required></p>
+              <p><input type="text" class="input" name="email" [(ngModel)]="email" placeholder="Email" required></p>
+              <p><input type="password" class="input" name="password" [(ngModel)]="password" placeholder="Password" required></p>
               <div class = "links">
                 <p class="link">Don't have an account?<a routerLink="/sign-up">Sign Up.</a></p>
                 <p class="link"><a routerLink="/forgot-password">Forgot Password?</a></p>
-                <p><a routerLink="/client-management">Client Management</a></p>
-                <p><a routerLink="/client-meeting-management">Client Meeting Management</a></p>
               </div>
-              <button type="submit" class="button">Login</button>
+              <button type="submit" class="button" >Login</button>
             </div>
           </form>
         </div>
