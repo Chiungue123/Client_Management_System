@@ -1,0 +1,46 @@
+.container {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.container div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.container .projects {
+    background-color: rgb(209, 189, 158);
+}
+.container .projects:hover {
+    background-color: rgb(208, 200, 188);
+}
+
+.container .clients {
+    background-color: rgb(191, 154, 226);
+}
+.container .clients:hover {
+    background-color: rgb(202, 181, 221);
+}
+
+.container .meetings {  
+    background-color: rgb(166, 222, 135);
+}
+.container .meetings:hover {  
+    background-color: rgb(188, 222, 170);
+}
+
+.container .inquiries {
+    background-color: rgb(232, 195, 94);
+}
+.container .inquiries:hover {
+    background-color: rgb(228, 208, 155);
+}

@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { RouterModule, Routes } from '@angular/router';
 import { AppRoutingModule, routingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -9,7 +8,7 @@ import { FormsModule } from '@angular/forms';
 import { AdminComponent } from './admin/admin.component';
 import { ClientComponent } from './client/client.component';
 import { AdminNavBarComponent } from './admin-nav-bar/admin-nav-bar.component';
-
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -23,7 +22,8 @@ import { AdminNavBarComponent } from './admin-nav-bar/admin-nav-bar.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   exports: [RouterModule],
   providers: [],
