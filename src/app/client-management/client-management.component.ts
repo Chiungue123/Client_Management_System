@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-client-management',
@@ -7,4 +8,12 @@ import { Component } from '@angular/core';
 })
 export class ClientManagementComponent {
 
+  constructor(private dataService: DataService) { }
+  clients!: Object;
+  getClients() {
+    this.dataService.getClients().subscribe(data => {
+      this.clients = data
+      console.log(this.clients);
+    })
+  }
 }

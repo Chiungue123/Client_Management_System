@@ -7,19 +7,31 @@ import { HttpClient } from '@angular/common/http';
 export class DataService {
   constructor(private http: HttpClient) { }
 
-  getClients() {
-    return this.http.get('/clients');
+  getClientMeetings() {
+    return this.http.get('/meetings');
+  }
+  postClientMeetings(meeting: object) {
+    return this.http.post('/clients', meeting);
   }
 
   getProjects() {
     return this.http.get('/projects');
   }
+  postProject(project: object) {
+    return this.http.post('/projects', project);
+  }
 
-  postClient(client: any) {
+  getClients() {
+    return this.http.get("/clients");
+  }
+  postClients(client: object) {
     return this.http.post('/clients', client);
   }
 
-  postProject(project: any) {
-    return this.http.post('/projects', project);
+  getInquiries() {
+    return this.http.get("/inquiries");
+  }
+  postInquiries(inquiry: object) {  
+    return this.http.post('/inquiries', inquiry);
   }
 }
