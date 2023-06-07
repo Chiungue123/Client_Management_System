@@ -7,6 +7,7 @@ import { ForgotPasswordComponent } from './forgot-password/forgot-password.compo
 import { LoginComponent } from './login/login.component';
 import { AdminComponent } from './admin/admin.component';
 import { ClientComponent } from './client/client.component';
+import { MenuComponent } from './menu/menu.component';
 
 const routes: Routes = [
   { path: '', component: LoginComponent},
@@ -16,7 +17,8 @@ const routes: Routes = [
   { path: 'forgot-password', component: ForgotPasswordComponent },
   { path: 'login', component: LoginComponent },
   { path: 'admin', component: AdminComponent },
-  { path: 'client', component: ClientComponent }
+  { path: 'client', component: ClientComponent },
+  { path: 'menu', component: MenuComponent }
 ];
 
 @NgModule({
@@ -32,4 +34,5 @@ export const routingComponents = [
    AdminComponent, 
    LoginComponent, 
    ClientComponent,
+   MenuComponent
   ]

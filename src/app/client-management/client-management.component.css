@@ -1,0 +1,26 @@
+.create {
+    margin: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid black;
+    display: flex; /* Make the input fields on top of eachother */
+    flex-direction: column; /* Make the input fields on top of eachother */
+    justify-content: center; /* Center the input fields */
+}
+
+.create input {
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid black;
+}
+
+.create button {
+    height: 40px;
+    width: 100px;
+    border-radius: 20px;
+    font-size: 15px;
+    color: white;
+    border: none;
+    background-color: rgb(111, 184, 111);
+}

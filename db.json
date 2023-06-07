@@ -1,19 +1,11 @@
 {
-    "clients": [
-      {
-        "id": 1,
-        "name": "Client Name",
-        "email": "client@email.com"
-      }
-    ],
-    "meetings": [
-      {
-        "id": 1,
-        "clientId": 1,
-        "date": "2023-05-30",
-        "time": "12:00",
-        "subject": "Initial Meeting"
-      }
-    ]
-  }
-  
+  "clients": [
+    {
+      "name": "Name",
+      "email": "Email",
+      "phone": "Phone",
+      "id": 1
+    }
+  ],
+  "meetings": []
+}

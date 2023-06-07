@@ -10,28 +10,28 @@ export class DataService {
   getClientMeetings() {
     return this.http.get('/meetings');
   }
-  postClientMeetings(meeting: object) {
+  addClientMeeting(meeting: object) {
     return this.http.post('/clients', meeting);
   }
 
   getProjects() {
     return this.http.get('/projects');
   }
-  postProject(project: object) {
+  addProject(project: object) {
     return this.http.post('/projects', project);
   }
 
   getClients() {
-    return this.http.get("/clients");
+    return this.http.get('http://localhost:3000/clients');
   }
-  postClients(client: object) {
-    return this.http.post('/clients', client);
+  addClient(client: object) {
+    return this.http.post('http://localhost:3000/clients', client);
   }
 
   getInquiries() {
     return this.http.get("/inquiries");
   }
-  postInquiries(inquiry: object) {  
+  addInquiry(inquiry: object) {  
     return this.http.post('/inquiries', inquiry);
   }
 }
