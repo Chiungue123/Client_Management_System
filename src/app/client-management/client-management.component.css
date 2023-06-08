@@ -9,42 +9,6 @@
     background-position: center;
     overflow-y: auto;
 }
-.create {
-    margin: 20px;
-    padding: 20px;
-    border-radius: 10px;
-    border: 1px solid black;
-    display: flex; /* Make the input fields on top of eachother */
-    flex-direction: column; /* Make the input fields on top of eachother */
-    justify-content: center; /* Center the input fields */
-    background-color: white;
-}
-
-.create input {
-    margin: 10px 10px 10px 0;
-    padding: 10px 10px 10px 0;
-    border-radius: 5px;
-    border: 1px solid black;
-}
-
-.create label {
-    padding: 10px;
-    font-size: 18px;
-    margin: 5% 2% 0% 2%;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: bold;
-}
-
-.create button {
-    height: 40px;
-    width: 100px;
-    border-radius: 20px;
-    font-size: 15px;
-    color: white;
-    border: none;
-    background-color: rgb(111, 184, 111);
-    cursor: pointer;
-}
 
 h2, h1 {
     font-family: Arial, Helvetica, sans-serif;
@@ -62,7 +26,7 @@ h2, h1 {
     list-style-type: none; /* Remove bullets */
     padding: 0; /* Remove padding */
     margin: 0; /* Remove margins */
-    flex-wrap: wrap;
+    flex-wrap: wrap; /* Wrap the items */
     display: flex;
     justify-content: space-between;
 }

@@ -11,6 +11,7 @@ import { AdminNavBarComponent } from './admin-nav-bar/admin-nav-bar.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MenuComponent } from './menu/menu.component';
 import { ProfileComponent } from './profile/profile.component';
+import { CreateClientComponent } from './create-client/create-client.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { ProfileComponent } from './profile/profile.component';
     ClientComponent,
     AdminNavBarComponent,
     MenuComponent,
-    ProfileComponent
+    ProfileComponent,
+    CreateClientComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title> Create Client | CoderGirl </title>
+  <link rel="stylesheet" href="create-client.component.css">
+</head>
+<body>
+    <div *ngIf="isModalVisible" class="modal">
+        <div class="modal-content">
+            <form (ngSubmit)="createClient()"> 
+                <label for="name">Name: </label>
+                <input for="name" type="text" name="name" [(ngModel)]="name" required>
+                <label for="phone">Phone: </label>
+                <input for="phone" type="text" name="phone" [(ngModel)]="phone" required>
+                <label for="email">Email: </label>
+                <input for="email" type="text" name="email" [(ngModel)]="email" required>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
