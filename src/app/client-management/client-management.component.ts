@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { DataService } from '../data.service';
+import { Client } from '../profile/profile.component';
 
 @Component({
   selector: 'app-client-management',
@@ -13,24 +14,17 @@ export class ClientManagementComponent {
   phone!: string;
 
   /* Get clients variables */
-  clients!: Object;
+  clients: Client[] = [];
+
   
   constructor(private dataService: DataService) { }
-  getClients() {
-    this.dataService.getClients().subscribe(data => {
-      this.clients = data
-      console.log(this.clients);
-    })
+
+  ngOnInit() {
+    this.getClients();
   }
-
+  
   createClient() {
-    /*const name = (<HTMLInputElement>document.getElementById('name')).value;
-    const email = (<HTMLInputElement>document.getElementById('email')).value;
-    const phone = (<HTMLInputElement>document.getElementById('phone')).value;
-    this.dataService.addClient({ name, email, phone }).subscribe(data) => {
-      console.log(data);
-    }*/
-
+    console.log("Creating client")
     const newClient = {
       name: this.name,
       email: this.email,
@@ -46,7 +40,21 @@ export class ClientManagementComponent {
       this.email = '';
     }, error => {
         console.log(error);
-      });
-    
+      }); 
+  }
+
+  getClients() {
+    console.log("Getting clients")
+    this.dataService.getClients().subscribe(data => {
+      this.clients = data
+      console.log(this.clients);
+    });
   }
 }
+
+/*const name = (<HTMLInputElement>document.getElementById('name')).value;
+    const email = (<HTMLInputElement>document.getElementById('email')).value;
+    const phone = (<HTMLInputElement>document.getElementById('phone')).value;
+    this.dataService.addClient({ name, email, phone }).subscribe(data) => {
+      console.log(data);
+    }*/

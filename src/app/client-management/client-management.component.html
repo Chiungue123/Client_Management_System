@@ -1,19 +1,25 @@
-<app-admin-nav-bar></app-admin-nav-bar>
-<h1>Client Management</h1>
+<div class="background">
+    <app-admin-nav-bar></app-admin-nav-bar>
+    <h1>Client Management</h1>
 
-<!--Template driven form to create a client-->
-<div class="create">
-    <form (ngSubmit)="createClient()"> 
-        <label for="name">Name: </label>
-        <input for="name" type="text" name="name" [(ngModel)]="name" required>
-        <label for="phone">Phone: </label>
-        <input for="phone" type="text" name="phone" [(ngModel)]="phone" required>
-        <label for="email">Email: </label>
-        <input for="email" type="text" name="email" [(ngModel)]="email" required>
-        <button type="submit">Submit</button>
-    </form>
+    <!--Template driven form to create a client-->
+    <div class="create">
+        <form (ngSubmit)="createClient()"> 
+            <label for="name">Name: </label>
+            <input for="name" type="text" name="name" [(ngModel)]="name" required>
+            <label for="phone">Phone: </label>
+            <input for="phone" type="text" name="phone" [(ngModel)]="phone" required>
+            <label for="email">Email: </label>
+            <input for="email" type="text" name="email" [(ngModel)]="email" required>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    <h2 font-family: arial>Clients</h2>
+    <div class="client-list">
+        <ul>
+            <li *ngFor="let client of clients">
+                <app-profile [client]="client"></app-profile>
+            </li>
+        </ul>  
+    </div>
 </div>
-
-<!--Profile card displayed for every client, if any-->
-<!--profile picture, name, phone, email, delete, edit-->
-

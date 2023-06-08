@@ -1,0 +1,27 @@
+.create {
+    width: 90%;
+    height: 30%;
+    margin: 20px;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+}
+
+.create button {
+    height: 40px;
+    width: 100px;
+    border-radius: 20px;
+    font-size: 15px;
+    color: white;
+    border: none;
+    background-color: rgb(111, 184, 111);
+}
+
+.create input {
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid black;
+}

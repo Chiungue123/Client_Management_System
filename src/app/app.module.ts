@@ -10,6 +10,7 @@ import { ClientComponent } from './client/client.component';
 import { AdminNavBarComponent } from './admin-nav-bar/admin-nav-bar.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MenuComponent } from './menu/menu.component';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { MenuComponent } from './menu/menu.component';
     AdminComponent,
     ClientComponent,
     AdminNavBarComponent,
-    MenuComponent
+    MenuComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,

@@ -1,2 +1,16 @@
 <app-admin-nav-bar></app-admin-nav-bar>
 <h1>Client Meeting Management</h1>
+
+<div class="create">
+    <form (ngSubmit)="createMeeting()">
+        <label for="meetingDate">Date: </label>
+        <input for="meetingDate" type="date" name="meetingDate" [(ngModel)]="meetingDate" required>
+        <label for="meetingTime">Time: </label>
+        <input for="meetingTime" type="time" name="meetingTime" [(ngModel)]="meetingTime" required>
+        <label for="clientID">Client ID: </label>
+        <input for="clientID" type="number" name="clientID" [(ngModel)]="clientID" required>
+        <label for="meetingAgenda">Meeting Agenda: </label>
+        <input for="meetingAgenda" type="text" name="meetingAgenda" [(ngModel)]="meetingAgenda" required>
+        <button type="submit">Submit</button>
+    </form>
+</div>

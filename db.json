@@ -5,7 +5,33 @@
       "email": "Email",
       "phone": "Phone",
       "id": 1
+    },
+    {
+      "name": "John Doe",
+      "email": "john.doe@example.com",
+      "phone": "2501234567",
+      "id": 2
+    },
+    {
+      "name": "Rob",
+      "email": "Email",
+      "phone": "250",
+      "id": 3
+    },
+    {
+      "name": "Someone",
+      "email": "email@example.com",
+      "phone": "2500001111",
+      "id": 4
     }
   ],
-  "meetings": []
+  "meetings": [
+    {
+      "meetingDate": "2023-06-16",
+      "meetingTime": "11:30",
+      "clientID": 1,
+      "meetingAgenda": "Initial meeting",
+      "id": 1
+    }
+  ]
 }

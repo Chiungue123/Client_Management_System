@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { DataService } from '../data.service';
-import { HttpClient } from '@angular/common/http';
+import { Time } from '@angular/common';
 
 @Component({
   selector: 'app-client-meeting-management',
@@ -9,10 +9,30 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ClientMeetingManagementComponent {
   constructor(private dataService: DataService) { }
-  http!: any;
-  meetings!: Object;
+  meetingDate!: Date | undefined; /* Allowing undefined values */
+  meetingTime!: Time | undefined; /* Allowing undefined values */
+  clientID!: number;
+  meetingAgenda!: string;
 
-  getMeetings() {
-    console.log(this.http.get('/meetings'));
-  }
+  createMeeting() {
+
+    const newMeeting = {
+      meetingDate: this.meetingDate,
+      meetingTime: this.meetingTime,
+      clientID: this.clientID,
+      meetingAgenda: this.meetingAgenda
+    }
+
+    console.log("New meeting: " + newMeeting.meetingDate + ", Time: " + newMeeting.meetingTime + ", ClientID: " + newMeeting.clientID + ", Agenda: " + newMeeting.meetingAgenda)
+
+    this.dataService.addClientMeeting(newMeeting).subscribe(response => {
+      console.log(response);
+      this.meetingDate = undefined;
+      this.meetingTime = undefined;
+      this.clientID = 0;
+      this.meetingAgenda = '';
+    }, error => {
+      console.log(error);
+    })
+  };
 }

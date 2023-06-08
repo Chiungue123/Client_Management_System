@@ -8,6 +8,7 @@ import { LoginComponent } from './login/login.component';
 import { AdminComponent } from './admin/admin.component';
 import { ClientComponent } from './client/client.component';
 import { MenuComponent } from './menu/menu.component';
+import { ProfileComponent } from './profile/profile.component';
 
 const routes: Routes = [
   { path: '', component: LoginComponent},
@@ -18,7 +19,8 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'admin', component: AdminComponent },
   { path: 'client', component: ClientComponent },
-  { path: 'menu', component: MenuComponent }
+  { path: 'menu', component: MenuComponent },
+  { path: 'profile', component: ProfileComponent }
 ];
 
 @NgModule({
@@ -34,5 +36,6 @@ export const routingComponents = [
    AdminComponent, 
    LoginComponent, 
    ClientComponent,
-   MenuComponent
+   MenuComponent,
+   ProfileComponent
   ]
