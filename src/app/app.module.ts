@@ -12,6 +12,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { MenuComponent } from './menu/menu.component';
 import { ProfileComponent } from './profile/profile.component';
 import { CreateClientComponent } from './create-client/create-client.component';
+import { CreateMeetingComponent } from './create-meeting/create-meeting.component';
+import { MeetingComponent } from './meeting/meeting.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { CreateClientComponent } from './create-client/create-client.component';
     AdminNavBarComponent,
     MenuComponent,
     ProfileComponent,
-    CreateClientComponent
+    CreateClientComponent,
+    CreateMeetingComponent,
+    MeetingComponent
   ],
   imports: [
     BrowserModule,

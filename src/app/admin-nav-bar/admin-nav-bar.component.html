@@ -11,10 +11,9 @@
             <div class="nav-links">
                 <a routerLink="/admin">Home</a>
                 <a routerLink="/client-management">View Clients</a>
-                <a routerLink="/create-client">Create Client</a>
                 <a routerLink="/client-meeting-management">Client Meetings</a>
-                <a routerLink="/admin/profile">Profile</a>
-                <a routerLink="/admin/payroll">Payroll</a>
+                <a (click)="openModal()">Create Client</a>
+                <a (click)="openClientModal()">Create Meeting</a>
                 <a routerLink="/">Logout</a>
             </div>
         </div>

@@ -1,27 +1,27 @@
 import { Component } from '@angular/core';
 import { DataService } from '../data.service';
-import { Client } from '../profile/profile.component';
+import { Client } from '../profile/profile.component'; // Importing the Client interface
 
 @Component({
   selector: 'app-client-management',
   templateUrl: './client-management.component.html',
   styleUrls: ['./client-management.component.css']
 })
+
 export class ClientManagementComponent {
-  /* Get clients variables */
-  clients: Client[] = [];
-  
+  clients: Client[] = []; // Array of clients
+
   constructor(private dataService: DataService) { }
 
   ngOnInit() {
-    this.getClients();
+    this.getClients(); 
   }
-  
-  getClients() {
+
+  getClients() { 
     console.log("Getting clients")
-    this.dataService.getClients().subscribe(data => {
-      this.clients = data
-      console.log(this.clients);
+    this.dataService.getClientsData().subscribe(clients => {
+      this.clients = clients;
+      console.log("Updating clients: " + this.clients)
     });
   }
 }

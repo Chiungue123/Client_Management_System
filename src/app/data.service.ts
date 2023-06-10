@@ -1,19 +1,73 @@
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
-import { Client } from './profile/profile.component';
+import { Injectable } from '@angular/core'; // This is used to make the class injectable
+import { HttpClient } from '@angular/common/http'; // This is used to make HTTP requests
+import { Observable, tap } from 'rxjs'; // This is used to get the Observable interface
+import { Client } from './profile/profile.component'; // This is used to get the Client interface
+import { BehaviorSubject } from 'rxjs'; // This is used to share data between components
+import { Meeting } from './meeting/meeting.component';
 
 @Injectable({
   providedIn: 'root'
 })
-export class DataService {
-  constructor(private http: HttpClient) { }
 
-  getClientMeetings() {
-    return this.http.get('http://localhost:3000/clients');
+export class DataService {
+  constructor(private http: HttpClient) {
+    this.loadInitialData(); // This will load the data when the service is created
+    console.log("loading initial data")
+   }
+
+  loadInitialData(){
+    this.http.get<Client[]>('http://localhost:3000/clients').subscribe(clients => {
+      this.clientsData.next(clients);
+    });
+    this.http.get<Meeting[]>('http://localhost:3000/meetings').subscribe(meetings => {
+      this.meetingsData.next(meetings);
+    });
+  }
+
+  // These will be used to automatically update the data in the components when the data changes
+  clientsData = new BehaviorSubject<Client[]>([]);
+  meetingsData = new BehaviorSubject<Meeting[]>([]);
+
+  private isModalVisibleSource = new BehaviorSubject<boolean>(false); 
+  isModalVisible$ = this.isModalVisibleSource.asObservable(); // This is used to share data between components
+
+  openModal() {
+    this.isModalVisibleSource.next(true);
+  }
+  closeModal() {
+    this.isModalVisibleSource.next(false);
+  }
+
+  private isClientModalVisibleSource = new BehaviorSubject<boolean>(false);
+  isClientModalVisible$ = this.isClientModalVisibleSource.asObservable(); // This is used to share data between components
+
+  openClientModal() {
+    this.isClientModalVisibleSource.next(true);
+  }
+  closeClientModal() {
+    this.isClientModalVisibleSource.next(false);
+  }
+
+  /*getClientMeetings(): void {
+    console.log("Getting meetings")
+    this.http.get<Meeting[]>('http://localhost:3000/meetings').subscribe(meetings => {
+      this.meetingsData.next(meetings);
+      console.log("Updating meetings")
+    });
+  }*/
+
+  getMeetingsData(): Observable<Meeting[]> {
+    console.log("Getting meetings data from observable")
+    return this.meetingsData.asObservable();
   }
   addClientMeeting(meeting: object) {
-    return this.http.post('http://localhost:3000/meetings', meeting);
+    console.log("Adding meeting")
+    return this.http.post('http://localhost:3000/meetings', meeting).pipe(
+      tap(() => {
+        this.loadInitialData();
+        console.log("Reloading meetings")
+      })
+    );
   }
 
   getProjects() {
@@ -23,11 +77,26 @@ export class DataService {
     return this.http.post('/projects', project);
   }
 
-  getClients(): Observable<Client[]> { /* Observable is a stream of data */
-    return this.http.get<Client[]>('http://localhost:3000/clients'); /* Return an observable of type Client[] */
+  /*
+  getClients(): void {
+    console.log("Getting clients")
+    this.http.get<Client[]>('http://localhost:3000/clients').subscribe(clients => {
+      this.clientsData.next(clients);
+    });
+  }*/
+
+  getClientsData(): Observable<Client[]> {
+    console.log("Getting clients data from observable")
+    return this.clientsData.asObservable();
   }
   addClient(client: object) {
-    return this.http.post('http://localhost:3000/clients', client);
+    console.log("Adding client")
+    return this.http.post('http://localhost:3000/clients', client).pipe(
+      tap(() => {
+        this.loadInitialData();
+        console.log("Reloading clients")
+     })
+    );
   }
 
   getInquiries() {

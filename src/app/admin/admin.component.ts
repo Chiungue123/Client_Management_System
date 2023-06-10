@@ -19,6 +19,7 @@ export class AdminComponent implements OnInit{
       }
     });
 
+    /* No longer needed, but keeping for reference
     this.dataService.getClients().subscribe({
       next: (client: object) => {
         console.log(client);
@@ -36,6 +37,7 @@ export class AdminComponent implements OnInit{
       console.log(error);
       }
     });
+    */
 
     this.dataService.getInquiries().subscribe({
       next: (inquiry: object) => {

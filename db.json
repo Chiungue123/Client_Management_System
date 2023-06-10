@@ -19,19 +19,42 @@
       "id": 3
     },
     {
-      "name": "Someone",
-      "email": "email@example.com",
-      "phone": "2500001111",
+      "name": "Jimmy Cooks",
+      "email": "jimmycooks@example.com",
+      "phone": "4569087777",
       "id": 4
+    },
+    {
+      "name": "Jack",
+      "email": "jack@example.com",
+      "phone": "3334445555",
+      "id": 5
     }
   ],
   "meetings": [
     {
-      "meetingDate": "2023-06-16",
-      "meetingTime": "11:30",
-      "clientID": 1,
-      "meetingAgenda": "Initial meeting",
+      "clientName": "Roberto",
+      "Date": "2012-01-01",
+      "Time": "10:00",
+      "clientID": 2,
+      "Agenda": "Agenda",
       "id": 1
+    },
+    {
+      "clientName": "George",
+      "Date": "2003-01-01",
+      "Time": "10:30",
+      "clientID": 9,
+      "Agenda": "Initial meeting",
+      "id": 2
+    },
+    {
+      "clientName": "Jack",
+      "Date": "2022-01-01",
+      "Time": "02:02",
+      "clientID": 5,
+      "Agenda": "Initial meeting",
+      "id": 3
     }
   ]
 }

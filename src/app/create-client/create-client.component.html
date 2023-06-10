@@ -9,13 +9,22 @@
     <div *ngIf="isModalVisible" class="modal">
         <div class="modal-content">
             <form (ngSubmit)="createClient()"> 
-                <label for="name">Name: </label>
-                <input for="name" type="text" name="name" [(ngModel)]="name" required>
-                <label for="phone">Phone: </label>
-                <input for="phone" type="text" name="phone" [(ngModel)]="phone" required>
-                <label for="email">Email: </label>
-                <input for="email" type="text" name="email" [(ngModel)]="email" required>
-                <button type="submit">Submit</button>
+                <div class="content">
+                    <label for="name">Client Name: </label>
+                    <input for="name" type="text" name="name" [(ngModel)]="name" required>
+                </div>
+                <div class="content">
+                    <label for="phone">Client Phone: </label>
+                    <input for="phone" type="text" name="phone" [(ngModel)]="phone" required>
+                </div>
+                <div class="content">
+                    <label for="email">Client Email: </label>
+                    <input for="email" type="text" name="email" [(ngModel)]="email" required>
+                </div>
+                <div class="buttons">
+                    <button type="submit">Submit</button>
+                    <button (click)="closeModal()" type="button">Cancel</button>
+                </div>
             </form>
         </div>
     </div>
