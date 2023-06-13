@@ -16,16 +16,8 @@
     padding: 20px;
     border-radius: 4px;
     width: 80%;
-    max-width: 600px;
-    height: 65%;
-}
-
-.modal select {
-    margin: 2%;
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid black;
-    width: 93%;
+    max-width: 500px;
+    height: 40%;
 }
 
 .modal input {
@@ -51,10 +43,10 @@
 }
 
 .modal button {
-    height: 50px;
-    width: 120px;
-    border-radius: 25px;
-    font-size: 18px;
+    height: 40px;
+    width: 100px;
+    border-radius: 20px;
+    font-size: 15px;
     color: white;
     background-color: rgb(111, 184, 111);
     transition: 0.5s;

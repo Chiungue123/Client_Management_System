@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Time } from '@angular/common';
+import { DataService } from '../data.service';
 
   /* Add meeting variables */
 export interface Meeting {
@@ -18,6 +19,11 @@ export interface Meeting {
 })
 
 export class MeetingComponent {
+  /* Get meetings variables from parent component */
+  @Input() meeting!: Meeting;
+  
+  constructor(private dataService: DataService) { }
+
   clientName!: string;
   Date!: Date;
   Time!: Time;
@@ -25,6 +31,21 @@ export class MeetingComponent {
   Agenda!: string;
   id!: number;
 
-  /* Get meetings variables from parent component */
-  @Input() meeting!: Meeting;
+  deleteMeeting() {
+    if(confirm("Are you sure you want to delete this meeting with " + this.meeting.clientName + "?")) {
+      this.dataService.deleteMeeting(this.meeting).subscribe(response => {
+      console.log(response);
+      this.dataService.loadInitialData();
+      });
+    }
+    else {
+      console.log("Meeting deletion cancelled");
+    }
+  }
+
+  editMeeting() {
+    console.log("edit meeting button clicked")
+    this.dataService.selectedMeeting.next(this.meeting)
+    this.dataService.openEditMeetingModal();
+  }
 }

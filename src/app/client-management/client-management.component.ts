@@ -14,14 +14,9 @@ export class ClientManagementComponent {
   constructor(private dataService: DataService) { }
 
   ngOnInit() {
-    this.getClients(); 
-  }
-
-  getClients() { 
-    console.log("Getting clients")
     this.dataService.getClientsData().subscribe(clients => {
-      this.clients = clients;
-      console.log("Updating clients: " + this.clients)
-    });
+    this.clients = clients;
+    console.log("Updating clients: " + this.clients)
+  });
   }
 }

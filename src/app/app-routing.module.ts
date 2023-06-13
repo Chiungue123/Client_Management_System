@@ -10,6 +10,7 @@ import { ClientComponent } from './client/client.component';
 import { MenuComponent } from './menu/menu.component';
 import { ProfileComponent } from './profile/profile.component';
 import { CreateClientComponent } from './create-client/create-client.component';
+import { EditClientComponent } from './edit-client/edit-client.component';
 
 const routes: Routes = [
   { path: '', component: LoginComponent},
@@ -23,7 +24,8 @@ const routes: Routes = [
   { path: 'menu', component: MenuComponent },
   { path: 'profile', component: ProfileComponent },
   { path: 'client', component: ClientComponent },
-  { path: 'create-client', component: CreateClientComponent }
+  { path: 'create-client', component: CreateClientComponent },
+  { path: 'edit-client', component: EditClientComponent }
 ];
 
 @NgModule({
@@ -41,5 +43,6 @@ export const routingComponents = [
    ClientComponent,
    MenuComponent,
    ProfileComponent,
-  CreateClientComponent
+   CreateClientComponent,
+   EditClientComponent
   ]

@@ -9,9 +9,17 @@
     <div *ngIf="isClientModalVisible" class="modal">
         <div class="modal-content">
             <form (ngSubmit)="addClientMeeting()">
-                <div class="content">
+                <!--<div class="content">
                     <label for="clientName">Client Name: </label>
                     <input for="clientName" type="text" name="clientName" [(ngModel)]="clientName" required>
+                </div>-->
+                <div class="content">
+                    <label for="clientName">Client Name: </label>
+                    <!--(change) event is fired when a client is selected, triggering onClientChange($event) method-->
+                    <!--selectedClient model is then updated with the value client.id of the selected option-->
+                    <select [(ngModel)]="selectedClient" (change)="onClientChange($event)" name="Name" required>
+                    <option *ngFor="let client of clients" [value]="client.id">{{client.name}}</option>
+                    </select>
                 </div>
     
                 <div class="content">
@@ -26,7 +34,7 @@
                 
                 <div class="content">
                     <label for="clientID">Client ID: </label>
-                    <input for="clientID" type="number" name="clientID" [(ngModel)]="clientID" required>
+                    <input for="clientID" type="number" name="clientID" [(ngModel)]="clientID" required disabled0>
                 </div>
                 
                 <div class="content">

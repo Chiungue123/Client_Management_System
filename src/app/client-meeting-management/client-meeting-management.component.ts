@@ -18,8 +18,8 @@ export class ClientMeetingManagementComponent {
   }
 
   getClientMeetings() {
-    this.dataService.getMeetingsData().subscribe(clients => {
-    this.meetings = clients;
+    this.dataService.getMeetingsData().subscribe(meetings => {
+    this.meetings = meetings;
     console.log("Updating meetings: " + this.meetings)
   });
 }

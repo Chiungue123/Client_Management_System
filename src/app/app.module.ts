@@ -14,6 +14,8 @@ import { ProfileComponent } from './profile/profile.component';
 import { CreateClientComponent } from './create-client/create-client.component';
 import { CreateMeetingComponent } from './create-meeting/create-meeting.component';
 import { MeetingComponent } from './meeting/meeting.component';
+import { EditClientComponent } from './edit-client/edit-client.component';
+import { EditMeetingComponent } from './edit-meeting/edit-meeting.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import { MeetingComponent } from './meeting/meeting.component';
     ProfileComponent,
     CreateClientComponent,
     CreateMeetingComponent,
-    MeetingComponent
+    MeetingComponent,
+    EditClientComponent,
+    EditMeetingComponent
   ],
   imports: [
     BrowserModule,

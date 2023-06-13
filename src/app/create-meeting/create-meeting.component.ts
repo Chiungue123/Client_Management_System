@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
 import { Time } from '@angular/common';
+import { Client } from '../profile/profile.component';
 
 @Component({
   selector: 'app-create-meeting',
@@ -8,8 +9,15 @@ import { Time } from '@angular/common';
   styleUrls: ['./create-meeting.component.css']
 })
 
-export class CreateMeetingComponent {
+export class CreateMeetingComponent implements OnInit {
   isClientModalVisible!: boolean;
+  clients: Client[] = [];
+
+  ngOnInit() {
+    this.dataService.getClientsData().subscribe(clients => {
+      this.clients = clients;
+    });
+  }
 
   constructor(private dataService: DataService) {
     /* Assigning the visibility to the local variable */
@@ -22,12 +30,23 @@ export class CreateMeetingComponent {
    closeClientModal(){
       console.log("Closing client modal from CreateMeetingComponent");
       this.isClientModalVisible = false;
-   }
+  }
+
+   /* Drop down menu for client name, automatically finds the client ID */
+   selectedClient(){
+      console.log("Selected client: " + this.clientName + ", ID: " + this.clientID);
+  }
+
+  /* Sets the client ID value */
+  onClientChange(event: any){
+    this.clientID = event.target.value;
+    console.log("Client ID: " + this.clientID);
+  }
   
   /* Get clients variables */
   clientName!: string;
-  Date!: Date | undefined; /* Allowing undefined values */
-  Time!: Time | undefined; /* Allowing undefined values */
+  Date!: Date | undefined;
+  Time!: Time | undefined;
   clientID!: number;
   Agenda!: string;
   id!: number;
@@ -35,7 +54,6 @@ export class CreateMeetingComponent {
   /* Create meeting */
   addClientMeeting() {
     console.log("Creating new meeting")
-
     const newMeeting = {
       clientName: this.clientName,
       Date: this.Date,
@@ -59,5 +77,5 @@ export class CreateMeetingComponent {
     }, error => {
       console.log(error);
     })
-  };
+  };  
 }

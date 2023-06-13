@@ -2,8 +2,30 @@
     width: 350px;
     height: 450px;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     box-shadow: 0 5px 10px rgba(0,0,0,0.4);
-    border-radius: 5px;
+    border-radius: 15px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+}
+
+.btn {
+    height: 45px;
+    width: 90px;
+    border-radius: 20px;
+    font-size: 15px;
+    color: white;
+    background-color: rgb(111, 184, 111);
+    transition: 0.5s;
+}
+
+.buttons :hover{
+    background: green;
+    cursor: pointer;
 }

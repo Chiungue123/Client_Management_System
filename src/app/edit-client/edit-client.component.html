@@ -3,27 +3,27 @@
 <head>
   <meta charset="UTF-8">
   <title> Create Client </title>
-  <link rel="stylesheet" href="create-client.component.css">
+  <link rel="stylesheet" href="edit-client.component.css">
 </head>
 <body>
-    <div *ngIf="isModalVisible" class="modal">
+    <div *ngIf="isEditModalVisible" class="modal">
         <div class="modal-content">
-            <form (ngSubmit)="createClient()"> 
+            <form (ngSubmit)="editClient()"> 
                 <div class="content">
-                    <label for="name">Client Name: </label>
+                    <label for="name">Edit Client Name: </label>
                     <input for="name" type="text" name="name" [(ngModel)]="client.name" required>
                 </div>
                 <div class="content">
-                    <label for="phone">Client Phone: </label>
+                    <label for="phone">Edit Client Phone: </label>
                     <input for="phone" type="text" name="phone" [(ngModel)]="client.phone" required>
                 </div>
                 <div class="content">
-                    <label for="email">Client Email: </label>
-                    <input for="email" type="text" name="email" [(ngModel)]="client.email" required>
+                    <label for="email">Edit Client Email: </label>
+                    <input for="email" type="text" name="email" [(ngModel)]="client.email" [(ngModel)]="client.email" required>
                 </div>
                 <div class="buttons">
-                    <button type="submit">Submit</button>
-                    <button (click)="closeModal()" type="button">Cancel</button>
+                    <button type="submit">Update</button>
+                    <button (click)="closeEditModal()" type="button">Cancel</button>
                 </div>
             </form>
         </div>
