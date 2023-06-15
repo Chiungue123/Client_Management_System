@@ -15,8 +15,11 @@ export class ClientManagementComponent {
 
   ngOnInit() {
     this.dataService.getClientsData().subscribe(clients => {
-    this.clients = clients;
-    console.log("Updating clients: " + this.clients)
-  });
+      this.clients = clients;
+    });
+    this.dataService.closeCreateMeetingModal();
+    this.dataService.closeEditMeetingModal();
+    this.dataService.closeCreateClientModal();
+    this.dataService.closeEditClientModal();
   }
 }

@@ -9,19 +9,19 @@ import { Client } from '../profile/profile.component';
 })
 
 export class CreateClientComponent {
-  isModalVisible!: boolean;
+  isCreateClientModalVisible!: boolean;
   client: Client = {name: '', email: '', phone: '', id: 0};
 
   constructor(private dataService: DataService) { 
     // Assigning the visibility to the local variable
-    this.dataService.isModalVisible$.subscribe(isVisible => {
-      this.isModalVisible = isVisible; 
+    this.dataService.isCreateClientModalVisible$.subscribe(isVisible => {
+      this.isCreateClientModalVisible = isVisible; 
     });
   }
 
   closeModal() {
     console.log("Closing client modal from CreateClientComponent")
-    this.isModalVisible = false;
+    this.isCreateClientModalVisible = false;
   }
 
   /* Add client variables */
@@ -42,6 +42,7 @@ export class CreateClientComponent {
     
     this.dataService.addClient(newClient).subscribe(response => {
       console.log(response);
+      alert("Client created successfully")
       this.closeModal();
       this.client.name = '';
       this.client.phone = '';

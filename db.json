@@ -7,20 +7,40 @@
       "id": 2
     },
     {
-      "name": "Name",
-      "email": "Email",
-      "phone": "Phone",
+      "name": "Spencer",
+      "email": "spencer@example.com",
+      "phone": "234567818",
       "id": 3
+    },
+    {
+      "name": "George",
+      "email": "Email@example.com",
+      "phone": "123456789",
+      "id": 4
+    },
+    {
+      "name": "Jimmy",
+      "email": "jimmy@example.com",
+      "phone": "987654321",
+      "id": 5
     }
   ],
   "meetings": [
     {
-      "clientName": "Ronald Mcdonald",
-      "Date": "2012-01-01",
-      "Time": "10:00",
-      "clientID": 2,
-      "Agenda": "Agenda",
+      "client_name": "Jimmy",
+      "date": "2024-10-10",
+      "time": "10:45",
+      "client_id": "5",
+      "agenda": "This is the meeting agenda",
       "id": 1
+    },
+    {
+      "client_name": "George",
+      "date": "2024-01-02",
+      "time": "15:00",
+      "client_id": "4",
+      "agenda": "This meeting is with George at 3:00pm",
+      "id": 2
     }
   ]
 }

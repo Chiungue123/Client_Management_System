@@ -10,8 +10,17 @@ import { Client } from '../profile/profile.component';
 })
 
 export class CreateMeetingComponent implements OnInit {
-  isClientModalVisible!: boolean;
+  isCreateMeetingModalVisible!: boolean;
+  selectedClient!: number;
   clients: Client[] = [];
+
+  /* Get clients variables */
+  client_name!: string;
+  date!: Date | undefined;
+  time!: Time | undefined;
+  client_id!: number;
+  agenda!: string;
+  id!: number;
 
   ngOnInit() {
     this.dataService.getClientsData().subscribe(clients => {
@@ -20,62 +29,44 @@ export class CreateMeetingComponent implements OnInit {
   }
 
   constructor(private dataService: DataService) {
-    /* Assigning the visibility to the local variable */
-    this.dataService.isClientModalVisible$.subscribe(isVisible => {
-      this.isClientModalVisible = isVisible;
+    this.dataService.isCreateMeetingModalVisible$.subscribe(isVisible => {
+      this.isCreateMeetingModalVisible = isVisible;
     });
    }
 
-   /* Closing the modal */
-   closeClientModal(){
-      console.log("Closing client modal from CreateMeetingComponent");
-      this.isClientModalVisible = false;
+  onClientChange(event: any) {
+    this.client_id = event.target.value;
+    console.log("Client ID: " + this.client_id);
   }
-
-   /* Drop down menu for client name, automatically finds the client ID */
-   selectedClient(){
-      console.log("Selected client: " + this.clientName + ", ID: " + this.clientID);
-  }
-
-  /* Sets the client ID value */
-  onClientChange(event: any){
-    this.clientID = event.target.value;
-    console.log("Client ID: " + this.clientID);
-  }
-  
-  /* Get clients variables */
-  clientName!: string;
-  Date!: Date | undefined;
-  Time!: Time | undefined;
-  clientID!: number;
-  Agenda!: string;
-  id!: number;
 
   /* Create meeting */
   addClientMeeting() {
-    console.log("Creating new meeting")
     const newMeeting = {
-      clientName: this.clientName,
-      Date: this.Date,
-      Time: this.Time,
-      clientID: this.clientID,
-      Agenda: this.Agenda,
+      client_name: this.client_name,
+      date: this.date,
+      time: this.time,
+      client_id: this.client_id,
+      agenda: this.agenda,
       id: this.id
     }
 
-    console.log("New meeting by: " + newMeeting.clientName + "Date: " + newMeeting.Date + ", Time: " + newMeeting.Time + ", ClientID: " + newMeeting.clientID + ", Agenda: " + newMeeting.Agenda + ", Meeting ID: " + newMeeting.id)
+    console.log("Selected Client: " + this.client_name + "Date: " + newMeeting.date + ", Time: " + newMeeting.time + ", ClientID: " + newMeeting.client_id + ", Agenda: " + newMeeting.agenda + ", Meeting ID: " + newMeeting.id)
 
     this.dataService.addClientMeeting(newMeeting).subscribe(response => {
-      this.closeClientModal();
+      this.closeCreateMeetingModal();
       console.log("Response: " + response);
-      this.clientName = '';
-      this.Date = undefined;
-      this.Time = undefined;
-      this.clientID = 0;
-      this.Agenda = '';
+      this.client_name = '';
+      this.date = undefined;
+      this.time = undefined;
+      this.client_id = 0;
+      this.agenda = '';
       this.id = 0;
     }, error => {
       console.log(error);
     })
   };  
+
+  closeCreateMeetingModal() {
+    this.isCreateMeetingModalVisible = false;
+  }
 }

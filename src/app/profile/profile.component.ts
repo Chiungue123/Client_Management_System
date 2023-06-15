@@ -40,7 +40,7 @@ export class ProfileComponent {
   editClient() {
     console.log("Editing client: " + this.client.name);
     this.dataService.selectedClient.next(this.client)
-    this.dataService.openEditModal();
+    this.dataService.openEditClientModal();
     /*this.dataService.editClient(this.client).subscribe(response => {
       console.log("Edit response: " + response);
       this.dataService.loadInitialData();

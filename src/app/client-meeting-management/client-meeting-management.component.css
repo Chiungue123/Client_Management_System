@@ -10,10 +10,17 @@
     overflow-y: auto;
 }
 
+h2, h1 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    padding-left: 20px;
+}
+
 .meeting-list {
     display: flex; /* Make the container flex */
     flex-wrap: wrap; /* Wrap the items */
     justify-content: space-between; /* Center the items horizontally */
+    padding-left: 15px;
 }
 
 .meeting-list ul {
@@ -25,30 +32,6 @@
     justify-content: space-between;
 }
 
-.create {
-    width: 90%;
-    height: 30%;
-    margin: 20px;
-    padding: 10px;
-    border-radius: 10px;
-    border: 1px solid black;
-    display: flex;
-    flex-direction: column;
-}
-
-.create button {
-    height: 40px;
-    width: 100px;
-    border-radius: 20px;
-    font-size: 15px;
-    color: white;
-    border: none;
-    background-color: rgb(111, 184, 111);
-}
-
-.create input {
-    margin: 10px;
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid black;
+.meeting-list li {
+    margin-left: 0px 0px 25px 0px; 
 }

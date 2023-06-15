@@ -1,12 +1,13 @@
 .nav {
     display: flex;
-    justify-content: space-around;
     flex: 1;
     font-family: Arial; 
     box-shadow: 0px 4px 8px rgb(0, 0, 0, 0.2);
     border-radius: 12px;
     background-color: white;
     margin: 10px;
+    max-height: 95px;
+    align-items: center;
 }
 
 .logo {
@@ -17,21 +18,17 @@
 }
 
 .nav .nav-links {
-    width: 100%;
+    display: flex;
+    width: 90%;
     height: 100%;
-    margin-top: 4%;
-    justify-content: space-between;
+    justify-content: space-evenly;
 }
 
 .nav .nav-links a {
     list-style-type: none;
     color: rgb(92, 90, 90);
-    font-size: 18px;
-    margin-left: 2%;
-    margin-right: 2%;
-    vertical-align: middle;
+    font-size: 20px;
     text-decoration: none;
-    justify-content: space-evenly;
 }
 
 .nav .nav-links a:hover {

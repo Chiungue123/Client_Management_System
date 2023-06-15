@@ -1,86 +1,57 @@
-/*.client {
-    color: white;
-    padding: 10px;
-    margin: 10px;
-    border-radius: 5px;
-    height: 50%;
-    width: 28%;
-    font-family: arial;
-}
-
-
-
-.client-buttons {
-    display: flex;
-    justify-content: space-between;
-    margin: 10px;
-    background-color: rgb(126, 126, 253);
-}*/
-
-/*@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500&display=swap');
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
-}*/
-
-.main{
+.main {
   width: 350px;
   height: 420px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-position: center;
-  background-size: cover;
 }
 
-.profile-card{
+.profile-card {
   height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.4);
+  border-radius: 15px;
+  border: 1px solid #ffffff40;
+  margin: 20px 0px 20px 0px; 
+  padding: 10px;
   max-width: 350px;
   min-width: 300px;
   max-height: 450px;
-  border-radius: 25px;
-  padding: 10px;
-  border: 1px solid #ffffff40;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.4);
-  margin: 20px 0px 20px 0px; 
 }
 
-.data{
+.data {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-top: 15px;
 }
-.data h2{
+.data h2 {
   font-size: 33px;
   font-weight: 600;
 }
-span{
+span {
   font-size: 18px;
 }
-.row{
+.row {
   display: flex;
   align-items: center;
   margin-top: 30px;
 }
-.row .info{
+.row .info {
   text-align: center;
   padding: 0 20px;
 }
-.buttons{
+.buttons {
   display: flex;
   align-items: center;
   margin-top: 65px;
 }
-.buttons .btn{
+.buttons .btn {
   color: #fff;
   text-decoration: none;
-  margin: 0 20px;
+  margin: 0 20px; 
   padding: 8px 25px;
   border-radius: 25px;
   font-size: 15px;
@@ -88,7 +59,7 @@ span{
   background-color: rgb(111, 184, 111);
   transition: 0.5s;
 }
-.buttons .btn:hover{
+.buttons .btn:hover {
     background: green;
     cursor: pointer;
 }

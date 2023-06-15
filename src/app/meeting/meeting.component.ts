@@ -4,11 +4,11 @@ import { DataService } from '../data.service';
 
   /* Add meeting variables */
 export interface Meeting {
-  clientName: string;
-  Date: Date;
-  Time: Time;
-  clientID: number;
-  Agenda: string;
+  client_name: string;
+  date: Date;
+  time: Time;
+  client_id: number;
+  agenda: string;
   id: number;
 }
 
@@ -24,15 +24,15 @@ export class MeetingComponent {
   
   constructor(private dataService: DataService) { }
 
-  clientName!: string;
-  Date!: Date;
-  Time!: Time;
-  clientID!: number;
-  Agenda!: string;
+  client_name!: string;
+  date!: Date | null;
+  time!: Date | null;
+  client_id!: number;
+  agenda!: string;
   id!: number;
 
   deleteMeeting() {
-    if(confirm("Are you sure you want to delete this meeting with " + this.meeting.clientName + "?")) {
+    if(confirm("Are you sure you want to delete this meeting with " + this.meeting.client_name + "?")) {
       this.dataService.deleteMeeting(this.meeting).subscribe(response => {
       console.log(response);
       this.dataService.loadInitialData();

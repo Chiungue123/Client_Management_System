@@ -32,11 +32,5 @@ h2, h1 {
 }
 
 .client-list li {
-    margin: 0px 0px 25px 0px;
+    margin: 0px 0px 25px 0px; 
 }
-
-.client {
-    flex: 0 0 auto;
-    width: 350px; /* or any other width that suits your design */
-    margin: 10px; /* Adjust as needed */
-  }

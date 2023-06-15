@@ -9,7 +9,7 @@ import { Client } from '../profile/profile.component';
 })
 
 export class EditClientComponent {
-  isEditModalVisible!: boolean;
+  isEditClientModalVisible!: boolean;
   client!: Client;
 
   ngOnInit() {
@@ -23,8 +23,8 @@ export class EditClientComponent {
   
   constructor(private dataService: DataService) { 
     // Assigning the visibility to the local variable
-    this.dataService.isEditModalVisible$.subscribe(isVisible => {
-      this.isEditModalVisible = isVisible; 
+    this.dataService.isEditClientModalVisible$.subscribe(isVisible => {
+      this.isEditClientModalVisible = isVisible; 
     });
   }
 
@@ -48,7 +48,7 @@ export class EditClientComponent {
     this.dataService.editClient(updatedClient).subscribe(response => {
       console.log(response);
       this.dataService.loadInitialData();
-      this.closeEditModal();
+      this.closeEditClientModal();
       this.name = '';
       this.phone = '';
       this.email = '';
@@ -57,8 +57,8 @@ export class EditClientComponent {
       }); 
   }
 
-  closeEditModal() {
+  closeEditClientModal() {
     console.log("Closing modal EditClientComponent")
-    this.isEditModalVisible = false;
+    this.isEditClientModalVisible = false;
   }
 }

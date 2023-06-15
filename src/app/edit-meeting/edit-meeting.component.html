@@ -11,27 +11,27 @@
             <form (ngSubmit)="editMeeting()">
                 <div class="content">
                     <label for="clientName">Client Name: </label>
-                    <input for="clientName" name="Name" [(ngModel)]="meeting.clientName" required>
+                    <input for="clientName" name="Name" [(ngModel)]="meeting.client_name" required>
                 </div>
     
                 <div class="content">
                     <label for="meetingDate">Date: </label>
-                    <input for="meetingDate" type="date" name="meetingDate" [(ngModel)]="meeting.Date" required>
+                    <input for="meetingDate" type="date" name="meetingDate" [(ngModel)]="meeting.date" required>
                 </div>
                 
                 <div class="content">
                     <label for="meetingTime">Time: </label>
-                    <input for="meetingTime" type="time" name="meetingTime" [(ngModel)]="meeting.Time" required>
+                    <input for="meetingTime" type="time" name="meetingTime" [(ngModel)]="meeting.time" required>
                 </div>
                 
                 <div class="content">
                     <label for="clientID">Client ID: </label>
-                    <input for="clientID" type="number" name="clientID" [(ngModel)]="meeting.clientID" required disabled>
+                    <input for="clientID" type="number" name="clientID" [(ngModel)]="meeting.client_id" required disabled>
                 </div>
                 
                 <div class="content">
                     <label for="meetingAgenda">Meeting Agenda: </label>
-                    <input for="meetingAgenda" type="text" name="meetingAgenda" [(ngModel)]="meeting.Agenda" required>
+                    <input for="meetingAgenda" type="text" name="meetingAgenda" [(ngModel)]="meeting.agenda" required>
                 </div>
                 
                 <div class="buttons">

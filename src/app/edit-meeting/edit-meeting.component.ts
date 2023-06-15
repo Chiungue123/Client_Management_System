@@ -7,6 +7,7 @@ import { Meeting } from '../meeting/meeting.component';
   templateUrl: './edit-meeting.component.html',
   styleUrls: ['./edit-meeting.component.css']
 })
+
 export class EditMeetingComponent {
   meeting!: Meeting;
   isEditMeetingModalVisible!: boolean;
@@ -15,7 +16,7 @@ export class EditMeetingComponent {
       this.dataService.selectedMeeting.subscribe(meeting => {
         if(meeting) {
           this.meeting = meeting;
-          console.log("Selected Meeting is: " + meeting.clientName + ", Agenda: " + meeting.Agenda);
+          console.log("Selected Meeting is: " + meeting.client_name + ", Agenda: " + meeting.agenda);
         }
       });
     }
@@ -26,31 +27,31 @@ export class EditMeetingComponent {
       });
     }
 
-    clientName!: string;
-    Date!: Date | null;
-    Time!: Date | null;
-    clientID!: number;
-    Agenda!: string;
+    client_name!: string;
+    date!: Date | null;
+    time!: Date | null;
+    client_id!: number;
+    agenda!: string;
     id!: number;
 
     editMeeting() {
-      const editedMeeting = {
-        clientName: this.meeting.clientName,
-        Date: this.meeting.Date,
-        Time: this.meeting.Time,
-        clientID: this.meeting.clientID,
-        Agenda: this.meeting.Agenda,
+      const updatedMeeting = {
+        client_name: this.meeting.client_name,
+        date: this.meeting.date,
+        time: this.meeting.time,
+        client_id: this.meeting.client_id,
+        agenda: this.meeting.agenda,
         id: this.meeting.id
       }
 
-      this.dataService.editMeeting(editedMeeting).subscribe(response => {
+      this.dataService.editMeeting(updatedMeeting).subscribe(response => {
         console.log(response);
         this.dataService.closeEditMeetingModal();
-        this.clientName = "";
-        this.Date = null;
-        this.Time = null;
-        this.clientID = 0;
-        this.Agenda = "";
+        this.client_name = "";
+        this.date = null;
+        this.time = null;
+        this.client_id = 0;
+        this.agenda = "";
       });
   }
 

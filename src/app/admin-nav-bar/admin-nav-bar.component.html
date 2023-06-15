@@ -1,6 +1,6 @@
 <head>
     <meta charset="UTF-8">
-    <title>My First Webpage</title>
+    <title>Navigation Bar</title>
     <link rel="stylesheet" href="admin-nav-bar.component.css">
     <base href="/">
 </head>
@@ -9,13 +9,16 @@
         <div class="nav">
             <img class="logo" src="/assets/Image/logo.png" alt="logo">
             <div class="nav-links">
-                <a routerLink="/admin">Home</a>
-                <a routerLink="/client-management">View Clients</a>
-                <a routerLink="/client-meeting-management">Client Meetings</a>
-                <a (click)="openModal()">Create Client</a>
-                <a (click)="openClientModal()">Create Meeting</a>
+                <a (click)="closeModals()" routerLink="/client-management">View Clients</a>
+                <a (click)="closeModals()" routerLink="/client-meeting-management">Client Meetings</a>
+                <a (click)="openCreateClientModal()">Create Client</a>
+                <a (click)="openCreateMeetingModal()">Create Meeting</a>
                 <a routerLink="/">Logout</a>
             </div>
         </div>
     </nav>
+    <app-create-client></app-create-client>
+    <app-edit-client></app-edit-client>
+    <app-create-meeting></app-create-meeting>
+    <app-edit-meeting></app-edit-meeting>
 </body>

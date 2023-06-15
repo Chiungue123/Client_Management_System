@@ -8,18 +8,20 @@
   <link rel="stylesheet" href="meeting.component.css">
 </head>
 <body>
-    <div class="main">
-        <div class="contents">
-            <h2>Meeting with {{meeting.clientName}}</h2>
-            <p>Client ID: {{meeting.clientID}}</p>
-            <p>Meeting Date: {{meeting.Date}}</p>
-            <p>Meeting Time: {{meeting.Time}}</p>
-            <p>Meeting ID: {{meeting.id}}</p>
-            <p>Meeting Notes: {{meeting.Agenda}}</p>
+    <section class="main">
+        <div class="meeting-card">
+            <div class="contents">
+                <h2>Meeting with {{meeting.client_name}}</h2>
+                <p>Client ID: {{meeting.client_id}}</p>
+                <p>Meeting Date: {{meeting.date}}</p>
+                <p>Meeting Time: {{meeting.time}}</p>
+                <p>Meeting ID: {{meeting.id}}</p>
+                <p>Meeting Notes: {{meeting.agenda}}</p>
+            </div>
+            <div class="buttons">
+                <button (click)="editMeeting()" class="btn">Edit</button>
+                <button (click)="deleteMeeting()" class="btn">Delete</button>
+            </div>
         </div>
-        <div class="buttons">
-            <button (click)="editMeeting()" class="btn">Edit</button>
-            <button (click)="deleteMeeting()" class="btn">Delete</button>
-        </div>
-    </div>
+    </section>
 </body>

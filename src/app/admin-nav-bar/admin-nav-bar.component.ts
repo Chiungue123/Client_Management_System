@@ -10,23 +10,34 @@ export class AdminNavBarComponent {
   isModalVisible!: boolean;
   isClientModalVisible!: boolean;
 
-  constructor (private dataService: DataService) { 
+  constructor (private dataService: DataService) { }
 
-    this.dataService.isModalVisible$.subscribe(isVisible => {
-      this.isModalVisible = isVisible; // Assigning the visibility to the local variable
-    });
-    
-    this.dataService.isClientModalVisible$.subscribe(Visible => {
-      this.isClientModalVisible = Visible; // Assigning the visibility to the local variable
-    });
+  openCreateClientModal() {
+    this.dataService.openCreateClientModal();
+  }
+  closeModals() {
+    this.dataService.closeCreateClientModal();
+    this.dataService.closeCreateMeetingModal();
   }
 
-  openModal() {
-    this.dataService.openModal();
-  }
-
-  openClientModal() {
-    console.log("Opening client modal from NavBar")
-    this.dataService.openClientModal();
+  openCreateMeetingModal() {
+    this.dataService.openCreateMeetingModal();
   }
 }
+
+/*
+Scenario: Creating a Client
+
+Given the user has signed in as admin, navigated to view clients and selected create client on the navigation bar
+When the user enters the client data into the client information fields
+And the user clicks on the submit button
+Then a new client should be created and displayed in the view clients page
+
+Scenario: Scheduling a Client Meeting
+
+Given the user is on the page view client meetings and has selected create meeting on the navigation bar
+When the user enters the required information on the meeting form
+And the user clicks on the submit button
+Then a new meeting should be scheduled for the given client at the specified date and time
+And the new meeting should be visible in the client meetings page
+*/

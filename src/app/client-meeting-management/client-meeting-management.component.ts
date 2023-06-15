@@ -14,13 +14,12 @@ export class ClientMeetingManagementComponent {
   constructor(private dataService: DataService) { }
 
   ngOnInit() {
-    this.getClientMeetings();
-  }
-
-  getClientMeetings() {
     this.dataService.getMeetingsData().subscribe(meetings => {
-    this.meetings = meetings;
-    console.log("Updating meetings: " + this.meetings)
-  });
-}
+      this.meetings = meetings;
+      });
+    this.dataService.closeCreateMeetingModal();
+    this.dataService.closeEditMeetingModal();
+    this.dataService.closeCreateClientModal();
+    this.dataService.closeEditClientModal();
+  }
 }

@@ -9,27 +9,27 @@
 </head>
 <body>
   <section class="main">
-  <div class="profile-card">
-    <div class="data">
-      <h2>{{client.name}}</h2>
-      <span>Client ID: {{client.id}}</span>
-    </div>
-    <div class="row">
-      <div class="info">
-        <h3>Email</h3>
-        <span>{{client.email}}</span>
+    <div class="profile-card">
+      <div class="data">
+        <h2>{{client.name}}</h2>
+        <span>Client ID: {{client.id}}</span>
       </div>
-      <div class="info">
-        <h3>Phone</h3>
-        <span>{{client.phone}}</span>
+      <div class="row">
+        <div class="info">
+          <h3>Email</h3>
+          <span>{{client.email}}</span>
+        </div>
+        <div class="info">
+          <h3>Phone</h3>
+          <span>{{client.phone}}</span>
+        </div>
+      </div>
+      <div class="buttons">
+        <button (click)="editClient()" class="btn">Edit</button>
+        <button (click)="deleteClient()" class="btn">Delete</button>
       </div>
     </div>
-    <div class="buttons">
-      <button (click)="editClient()" class="btn">Edit</button>
-      <button (click)="deleteClient()" class="btn">Delete</button>
-    </div>
-  </div>
-</section>
+  </section>
 </body>
 </html>
 

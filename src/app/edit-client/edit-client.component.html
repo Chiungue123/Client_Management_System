@@ -6,7 +6,7 @@
   <link rel="stylesheet" href="edit-client.component.css">
 </head>
 <body>
-    <div *ngIf="isEditModalVisible" class="modal">
+    <div *ngIf="isEditClientModalVisible" class="modal">
         <div class="modal-content">
             <form (ngSubmit)="editClient()"> 
                 <div class="content">
@@ -23,7 +23,7 @@
                 </div>
                 <div class="buttons">
                     <button type="submit">Update</button>
-                    <button (click)="closeEditModal()" type="button">Cancel</button>
+                    <button (click)="closeEditClientModal()" type="button">Cancel</button>
                 </div>
             </form>
         </div>
