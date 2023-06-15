@@ -18,9 +18,5 @@ export class LoginComponent {
       alert("Login successful")
       this.router.navigate(['/client-management'])
     }
-    else if (this.email == "client@example.com" && this.password == "client"){
-      alert("Login successful")
-      this.router.navigate(['/client'])
-    }
   }
 }

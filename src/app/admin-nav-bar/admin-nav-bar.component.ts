@@ -15,6 +15,7 @@ export class AdminNavBarComponent {
   openCreateClientModal() {
     this.dataService.openCreateClientModal();
   }
+  
   closeModals() {
     this.dataService.closeCreateClientModal();
     this.dataService.closeCreateMeetingModal();
